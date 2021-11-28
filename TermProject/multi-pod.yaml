@@ -33,5 +33,5 @@ spec:
           image: gcr.io/termproject-333202/spark
           ports:
             - containerPort: 8889
-                    command: ["/bin/sh","-c"]
+          command: ["/bin/sh","-c"]
           args: ["jupyter notebook --allow-root --ip='0.0.0.0' --port=8889 --no-browser --NotebookApp.token='' --NotebookApp.password=''"]
