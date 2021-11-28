@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: microservice-deployment
+	labels:
+		app: microservice-app
+spec:
+	replicas: 3
+	selector:
+		matchLabels:
+			app: microservice-app
+  template:
+    metadata:
+      labels:
+        app: microservice-app
+    spec:
+      containers:
+        - name: microservice-container
+          image: gcr.io/termproject-333202/test-image
+          ports:
+            - containerPort: 5000
+        - name: jupyter
+          image: gcr.io/termproject-333202/jupyter-notebook
+          ports:
+            - containerPort: 8888
+          command: ["/bin/sh","-c"]
+          args: ["jupyter notebook --allow-root --ip='0.0.0.0' --port=8888 --no-browser --NotebookApp.token='' --NotebookApp.password=''"]
+        - name: sonarqube
+          image: gcr.io/termproject-333202/sonarqube
+          ports:
+            - containerPort: 9000
+        - name: spark
+          image: gcr.io/termproject-333202/spark
+          ports:
+            - containerPort: 8889
+                    command: ["/bin/sh","-c"]
+          args: ["jupyter notebook --allow-root --ip='0.0.0.0' --port=8889 --no-browser --NotebookApp.token='' --NotebookApp.password=''"]
