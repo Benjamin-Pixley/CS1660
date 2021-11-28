@@ -1,3 +1,8 @@
+NOTE: YOU MUST FIRST CREATE A PROJECT. MY PROJECT ID WAS termproject-333202
+IF THIS IS NOT YOUR PROJECT ID, THEN YOU WILL NEED TO ADJUST THE YAML FILES BY REPLACING MY PROJECT ID WITH YOUR PROJECT ID
+I UNDERSTAND YOU DID NOT WANT THE USER TO HAVE TO DO ANY OF THIS, BUT YOU ARE NOT ABLE TO SIMPLY USE A $PROJECT_ID PLACEHOLDER
+TO AUTIMATICALLY INPUT THE PROJECT_ID. PLEASE DO NOT MISS THIS
+
 Steps to deploy my application:
 1. git clone this repository into your gcp console (only the multi-port.yaml and service.yaml files are relevant)
 2. Create a cluster with the default settings or use the following command:
