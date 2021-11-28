@@ -38,3 +38,23 @@ Project Notes:
   
 Flask GUI:
 ![image](https://user-images.githubusercontent.com/78111942/143733163-175689ce-9bad-4b4d-8aa7-a72d7f348be1.png)
+  
+Thanks to these online resources for guiding me through the project:
+flask-> https://kekayan.medium.com/a-step-by-step-guide-for-deploying-flask-web-services-on-gke-cluster-76420d75671d
+multiport listening -> https://stackoverflow.com/questions/45147664/how-to-expose-multiple-port-using-a-load-balancer-services-in-kubernetes
+multicontainer deployment -> https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+flask templates -> https://stackoverflow.com/questions/12096522/render-template-with-multiple-variables
+
+Video Link:
+
+  
+Links for containers:
+https://hub.docker.com/repository/docker/crashpixley/test-image
+https://hub.docker.com/r/jupyter/minimal-notebook
+https://hub.docker.com/r/jupyter/all-spark-notebook
+https://hub.docker.com/_/sonarqube
+https://hub.docker.com/r/bde2020/hadoop-datanode
+https://hub.docker.com/r/bde2020/hadoop-namenode
+https://hub.docker.com/r/bde2020/hadoop-nodemanager
+https://hub.docker.com/r/bde2020/hadoop-resourcemanager
+https://hub.docker.com/r/bde2020/hadoop-historyserver
