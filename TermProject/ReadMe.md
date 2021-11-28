@@ -49,7 +49,8 @@ multicontainer deployment -> https://kubernetes.io/docs/concepts/workloads/contr
 flask templates -> https://stackoverflow.com/questions/12096522/render-template-with-multiple-variables
 
 Video Link:
-
+  Code Walkthrough -> https://youtu.be/f4i3RmwSyPU
+  Demo -> https://youtu.be/QByuaZDiqcQ
   
 Links for containers:
 https://hub.docker.com/repository/docker/crashpixley/test-image
