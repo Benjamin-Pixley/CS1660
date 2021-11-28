@@ -10,22 +10,24 @@ Steps to deploy my application:
 1. git clone this repository into your gcp console (only the multi-port.yaml and service.yaml files are relevant)
 2. Create a cluster with the default settings or use the following command:
   gcloud beta container --project "termproject-333202" clusters create "cluster-1" --zone "us-central1-c" --no-enable-basic-auth --cluster-version "1.21.5-gke.1302" --release-channel "regular" --machine-type "e2-medium" --image-type "COS_CONTAINERD" --disk-type "pd-standard" --disk-size "100" --metadata disable-legacy-endpoints=true --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --max-pods-per-node "110" --num-nodes "3" --logging=SYSTEM,WORKLOAD --monitoring=SYSTEM --enable-ip-alias --network "projects/termproject-333202/global/networks/default" --subnetwork "projects/termproject-333202/regions/us-central1/subnetworks/default" --no-enable-intra-node-visibility --default-max-pods-per-node "110" --no-enable-master-authorized-networks --addons HorizontalPodAutoscaling,HttpLoadBalancing,GcePersistentDiskCsiDriver --enable-autoupgrade --enable-autorepair --max-surge-upgrade 1 --max-unavailable-upgrade 0 --enable-shielded-nodes --node-locations "us-central1-c"
-4. export PROJECT_ID=[YOUR PROJECT ID HERE]
-5. docker pull crashpixley/test-image
-6. docker tag crashpixley/test-image gcr.io/$PROJECT_ID/test-image
-7. docker push gcr.io/$PROJECT_ID/test_image
-8. docker pull jupyter/minimal-notebook
-9. docker tag jupyter/minimal-notebook gcr.io/$PROJECT_ID/jupyter-notebook
-10. docker push gcr.io/$PROJECT_ID/jupyter-notebook
-11. docker pull jupyter/all-spark-notebook
-12. docker tag jupyter/all-spark-notebook gcr.io/$PROJECT_ID/spark
-13. docker push gcr.io/$PROJECT_ID/spark
-14. docker pull sonarqube
-15. docker tag sonarqube gcr.io/$PROJECT_ID/sonarqube
-16. docker push gcr.io/$PROJECT_ID/sonarqube
-17. kubectl apply -f multi-port.yaml
-18. kubectl apply -f service.yaml
-19. This concludes how to deploy the application
+4. gcloud container clusters list
+5. gcloud container clusters get-credentials [cluster name] --zone [zone]   (get this info from running the previous command)
+6. export PROJECT_ID=[YOUR PROJECT ID HERE]
+7. docker pull crashpixley/test-image
+8. docker tag crashpixley/test-image gcr.io/$PROJECT_ID/test-image
+9. docker push gcr.io/$PROJECT_ID/test_image
+10. docker pull jupyter/minimal-notebook
+11. docker tag jupyter/minimal-notebook gcr.io/$PROJECT_ID/jupyter-notebook
+12. docker push gcr.io/$PROJECT_ID/jupyter-notebook
+13. docker pull jupyter/all-spark-notebook
+14. docker tag jupyter/all-spark-notebook gcr.io/$PROJECT_ID/spark
+15. docker push gcr.io/$PROJECT_ID/spark
+16. docker pull sonarqube
+17. docker tag sonarqube gcr.io/$PROJECT_ID/sonarqube
+18. docker push gcr.io/$PROJECT_ID/sonarqube
+19. kubectl apply -f multi-port.yaml
+20. kubectl apply -f service.yaml
+21. This concludes how to deploy the application
 
 Utilizing the application:
 1. Run "kubectl get svc"
