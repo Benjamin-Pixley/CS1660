@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-	name: microservice-deployment
-	labels:
-		app: microservice-app
+  name: microservice-deployment
+  labels:
+    app: microservice-app
 spec:
-	replicas: 3
-	selector:
-		matchLabels:
-			app: microservice-app
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microservice-app
   template:
     metadata:
       labels:
